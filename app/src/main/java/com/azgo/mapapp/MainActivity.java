@@ -643,7 +643,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     shortestDistance = distance;
                     closestNode = no;
                 }
-            
+
             i++;
         }
         //search the closest Node on shortest path
