@@ -372,6 +372,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             else
                 break;
         }
+        MainActivity.this.setMarker("elevator", 41.177825, -8.597201);
+        MainActivity.this.setMarker("elevator", 41.177767, -8.596833);
+        MainActivity.this.setMarker("elevator", 41.177685, -8.596366);
+        MainActivity.this.setMarker("elevator", 41.177619, -8.596009);
+        MainActivity.this.setMarker("elevator", 41.177512, -8.595533);
+        MainActivity.this.setMarker("elevator", 41.177412, -8.595191);
+
+        MainActivity.this.setMarker("WC", 41.177559, -8.595614);
+        MainActivity.this.setMarker("WC", 41.177730, -8.596452);
+        MainActivity.this.setMarker("WC", 41.177767, -8.596735);
+
+        MainActivity.this.setMarker("ATM", 41.177875, -8.597062);
+        MainActivity.this.setMarker("ATM", 41.177540, -8.595398);
+
         mGoogleMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
 
             @Override
@@ -714,11 +728,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setMarker(final String locality, double lat, double lng) {
         BitmapDescriptor icon;
         switch (locality) {
-            case "B001":
-            case "B002":
-            case "B003":
-                icon = BitmapDescriptorFactory.fromResource(R.drawable.auditorio);
-                break;
+            case "elevator": icon = BitmapDescriptorFactory.fromResource(R.drawable.elevator); break;
+            case "WC": icon = BitmapDescriptorFactory.fromResource(R.drawable.wc); break;
+            case "ATM": icon = BitmapDescriptorFactory.fromResource(R.drawable.atm); break;
+            case "B001": icon = BitmapDescriptorFactory.fromResource(R.drawable.auditorio); break;
+            case "B002": icon = BitmapDescriptorFactory.fromResource(R.drawable.auditorio); break;
+            case "B003": icon = BitmapDescriptorFactory.fromResource(R.drawable.auditorio); break;
             default:
                 if (locality.charAt(0) == 'B') // Temporário até adicionar novos edificios ao mapa
                     icon = BitmapDescriptorFactory.fromResource(R.drawable.sala);
